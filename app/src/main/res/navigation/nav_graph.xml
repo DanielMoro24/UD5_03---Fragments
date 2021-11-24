@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repositoryListFragment">
+
+    <fragment
+        android:id="@+id/repositoryListFragment"
+        android:name="com.example.demo004.RepositoryListFragment"
+        android:label="fragment_repository_list"
+        tools:layout="@layout/fragment_repository_list" >
+        <action
+            android:id="@+id/action_repositoryListFragment_to_repositoryDetailFragment"
+            app:destination="@id/repositoryDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/repositoryDetailFragment"
+        android:name="com.example.demo004.RepositoryDetailFragment"
+        android:label="fragment_repository_detail"
+        tools:layout="@layout/fragment_repository_detail" >
+        <argument
+            android:name="repoName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument android:name="repoImagen"
+            app:argType="string"
+            app:nullable="true" />
+        <argument android:name="repoTitle"
+            app:argType="string"
+            app:nullable="true" />
+        <argument android:name="repoLast"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="repoCountry"
+            app:argType="string"
+            app:nullable="true" />
+        <argument android:name="repoAge"
+            app:argType="integer" />
+        <argument
+            android:name="repoDate"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
